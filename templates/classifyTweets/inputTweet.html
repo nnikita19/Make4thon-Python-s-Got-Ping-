@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+    <style>
+        .inputArea{
+            margin-top: 50px;
+            margin: 10px;
+        }
+    </style>
+{% endblock stylesheet %}
+
+
+{% block content %}
+
+    <div class="inputArea">
+        <form name = "form" method="POST" action="{% url 'takeInput' %}">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="inputbox"><h4>Enter Tweet :</h4> </label>
+                <input type="text" class="form-control" id="inputbox" name="inputbox" aria-describedby="Input" placeholder="Enter tweet" required>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="submit">
+
+        </form>
+    </div>
+
+{% endblock content %}

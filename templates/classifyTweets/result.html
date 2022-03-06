@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block stylesheet %}
+    <style>
+        .parent{
+            margin:20px;
+        }
+        .red{
+            color: red;
+            font-weight: bold;
+        }
+
+        .green{
+            color: green;
+            font-weight: bold;
+        }
+        .result{
+            margin-top:20px;
+        }
+    </style>
+{% endblock stylesheet %}
+
+
+{% block content %}
+    <div class="parent">
+        <h3>Result</h3>
+        <hr>
+        <div>
+            <h5>Provided Tweet :</h5>
+            {{tweet}}
+        </div>
+
+        <div class="result">
+            {% if ans == 1%}
+                <div class="green">Tweet is not offensive</div>
+            {%else%}
+                <div class="red">Tweet is offensive</div>
+                <a href="https://cyberbaap.org/cyberbullying/reporting/">Report Here</a>
+            {%endif%}
+        </div>
+
+    </div>
+
+
+{% endblock content %}
